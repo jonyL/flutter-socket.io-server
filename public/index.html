@@ -22,11 +22,24 @@
             console.log('Perdimos comunicación con el servidor')
         });
 
-        socket.emit('mensaje', {nombre : 'Jony'})
+        //socket.emit('mensaje', {nombre : 'Jony'})
 
         socket.on('mensaje', function(payload) {
             console.log('Escuchando...', payload);
         });
+
+        socket.on('nuevo-mensaje', function(payload) {
+            //console.log('Mensaje desde flutter', payload);
+        });
+
+
+        socket.on('active-bands', function(bands) {
+            console.clear()
+            console.table(bands);
+        });
+
+
+
     </script>
 </body>
 </html>
